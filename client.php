@@ -20,30 +20,52 @@
     ?>
             <div>
                 <main>
-                    <form action="POST">
-                        <input type="text" placeholder="Nom">
-                        </imput>
-                        <input type="text" placeholder="Prénom">
-                        </imput>
-                        <input type="text" placeholder="Description">
-                        </imput>
-                        <select name="entreprise">
+                    <form method="POST">
+                        <label for="name">Nom client</label>
+                        <input type="text" id="name" name="Name" placeholder="Nom" required>
+                       <label for="firstname">Prénom client</label>
+                        <input type="text" id="firstname" name ="FirstName" placeholder="Prénom" required>
+
+                        <label for="description">Description</label>
+                       <input type="text" id="description" name="Description" placeholder="Description" required>
+
+                        <label for="name">Selection entreprise</label>
+                        <select name="enterprise" required>
                             <option></option>
                             <?php 
-                                 while( $res = $resultas->fetch() )
+                                 while($res = $resultas->fetch() )
                                  {
-                                    echo '<option id="'.$res->id.'">'.$res->nom.'</option>';
+                                    echo '<option value="'.$res->id.'">'.$res->nom.'</option>';
                                  }
 
                                  ?>
                         </select>
-                        <input type="button" value="Valider">
+                        <input type="submit" value="Valider">
 
 
                     </form>
 
                 </main>
             </div>
+  <?php          
+  $Name1 = $_POST['Name'];
+  $FirstName1 = $_POST['FirstName'];
+  $Description1 = $_POST['Description'];
+  $Enterprise1 = $_POST['enterprise'];
+
+
+echo $Name1.' '.$FirstName1.' '.$Description1.' '.$Enterprise1;
+
+
+  $sql = "
+  INSERT INTO Client ( `nom`,`Prenom`,`description`,`idEntreprise`) VALUES ('$Name1',
+    '$FirsName1', '$Description1', '$Enterprise1')";
+
+mysql_query($sql);
+
+
+?>
+
             <script src="node_modules/jquery/dist/jquery.js"></script>
             <script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
             <script src="js/script.js"></script>
