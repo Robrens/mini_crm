@@ -13,53 +13,9 @@
     <?php
       include('password.php');
     ?>
-        <header>
-            <div class="container">
-                <div class="row">
-                    <div class="col">
-                        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                            <a class="navbar-brand" href="#">Navbar</a>
-                            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                                aria-expanded="false" aria-label="Toggle navigation">
-                                <span class="navbar-toggler-icon"></span>
-                            </button>
-
-                            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                                <ul class="navbar-nav mr-auto">
-                                    <li class="nav-item active">
-                                        <a class="nav-link" href="#">Home
-                                            <span class="sr-only">(current)</span>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="#">Link</a>
-                                    </li>
-                                    <li class="nav-item dropdown">
-                                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
-                                            aria-expanded="false">
-                                            Dropdown
-                                        </a>
-                                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                            <a class="dropdown-item" href="#">Action</a>
-                                            <a class="dropdown-item" href="#">Another action</a>
-                                            <div class="dropdown-divider"></div>
-                                            <a class="dropdown-item" href="#">Something else here</a>
-                                        </div>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link disabled" href="#">Disabled</a>
-                                    </li>
-                                </ul>
-                                <form class="form-inline my-2 my-lg-0">
-                                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-                                </form>
-                            </div>
-                        </nav>
-                    </div>
-                </div>
-            </div>
-        </header>
+    <?php
+        include('nav.php');
+    ?>
         <main>
             <div class="container-fluid">
                 <div class="row">
@@ -84,12 +40,12 @@
                                         <div class="card">
                                             <div class="card-header" id="headingClients">
                                                 <h5 class="mb-0">
-                                                    <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseClients" aria-expanded="true" aria-controls="collapseClients">
-                                                        <?php echo ''.$result->nom.''.$result->Prenom.''?>
+                                                   <?php echo '<button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseClients'.$result->id.'" aria-expanded="true" aria-controls="collapseClients">' ?>
+                                                        <?php echo ''.$result->nom.' '.$result->Prenom.''?>
                                                     </button>
                                                 </h5>
                                             </div>
-                                            <div id="collapseClients" class="collapse hide" aria-labelledby="headingClients" data-parent="#accordionClients">
+                                            <?php echo '<div id="collapseClients'.$result->id.'" class="collapse hide" aria-labelledby="headingClients" data-parent="#accordionClients">' ?>
                                                 <?php echo '<img src="'.$result->thumb.'">' ?>
                                                 <p>
                                                     <?php echo ''.$result->description.'' ?>
@@ -112,13 +68,13 @@
                                     <div class="card">
                                         <div class="card-header" id="headingEntreprises">
                                             <h5 class="mb-0">
-                                                <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseEntreprises" aria-expanded="true"
-                                                    aria-controls="collapseEntreprises">
+                                                <?php echo '<button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseEntreprises'.$res->id.'" aria-expanded="true" aria-controls="collapseEntreprises">' ?>
+                                                    
                                                     <?php echo''.$res->nom.'' ?>
                                                 </button>
                                             </h5>
                                         </div>
-                                        <div id="collapseEntreprises" class="collapse hide" aria-labelledby="headingEntreprises" data-parent="#accordionEntreprises">
+                                      <?php echo '<div id="collapseEntreprises'.$res->id.'" class="collapse hide" aria-labelledby="headingEntreprises" data-parent="#accordionEntreprises">' ?>
                                             <div class="card-body">
                                                 <!-- Ton contenu généré en PHP ici -->
                                                 <?php echo '<img src="'.$res->thumb.'"'?>

@@ -430,3 +430,6 @@
 [Thu Aug 09 10:07:37.254805 2018] [php7:emerg] [pid 6683] [client 127.0.0.1:42782] PHP Parse error:  syntax error, unexpected end of file in /home/baudu/code/projet/mini_crm/index.php on line 167
 [Thu Aug 09 13:50:42.313566 2018] [php7:emerg] [pid 5703] [client 127.0.0.1:44032] PHP Parse error:  syntax error, unexpected '->' (T_OBJECT_OPERATOR), expecting ',' or ';' in /home/baudu/code/projet/mini_crm/index.php on line 117
 [Thu Aug 09 13:50:43.565071 2018] [php7:emerg] [pid 6678] [client 127.0.0.1:44034] PHP Parse error:  syntax error, unexpected '->' (T_OBJECT_OPERATOR), expecting ',' or ';' in /home/baudu/code/projet/mini_crm/index.php on line 117
+[Thu Aug 09 14:53:46.386494 2018] [php7:error] [pid 6678] [client 127.0.0.1:44894] script '/home/baudu/code/projet/mini_crm/client.php' not found or unable to stat
+[Thu Aug 09 14:55:37.451252 2018] [php7:error] [pid 11980] [client 127.0.0.1:44904] script '/home/baudu/code/projet/mini_crm/client.php' not found or unable to stat
+[Thu Aug 09 15:09:01.921732 2018] [php7:error] [pid 9145] [client 127.0.0.1:45076] script '/home/baudu/code/projet/mini_crm/Client.php' not found or unable to stat
